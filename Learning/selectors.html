@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Selector</title>
+    <style>
+        *{
+            background-color: black;
+        }
+        p{
+            color: green;
+        } 
+        div{
+            color:blue;
+        }
+        .textpink{
+            color: rgb(201, 17, 48);
+        }
+        .large{
+            font-size: 30px;
+        }
+        .textpink.large {
+            font-family: fantasy;
+        }
+        #unique{
+            font-style: oblique;
+            font-size: 20px;
+        }
+        a[href="http://google.com"]{
+            color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum voluptatibus omnis similique voluptas dolor blanditiis doloribus commodi eos perspiciatis dicta, vero et, exercitationem assumenda ea. Tenetur id ducimus voluptatibus. Magnam?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, dolores! Harum quasi blanditiis, dolore laboriosam iste libero ullam similique odio saepe voluptatum, laborum nesciunt ipsum molestiae maiores est, facere voluptate!</p>
+
+    <div>
+   
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, ipsum. Quia necessitatibus libero nihil, magni quos expedita aut maiores, exercitationem nisi fugit odio delectus. Ab architecto enim consequuntur eius nam.
+        
+    </div>
+
+    <p class="textpink large">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, ipsum. Quia necessitatibus libero nihil, magni quos expedita aut maiores, exercitationem nisi fugit odio delectus. Ab architecto enim consequuntur eius nam.
+    </p>
+    <p id="unique">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, ipsum. Quia necessitatibus libero nihil, magni quos expedita aut maiores, exercitationem nisi fugit odio delectus. Ab architecto enim consequuntur eius nam.
+    </p>
+    <p class="textpink" id="unique">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, ipsum. Quia necessitatibus libero nihil, magni quos expedita aut maiores, exercitationem nisi fugit odio delectus. Ab architecto enim consequuntur eius nam.
+    </p>
+
+    <!-- Attribute Selector -->
+    <a href="http://google.com" target="blank_">google</a>
+    <a href="http://facebook.com" target="blank_">facebook</a>
+    
+
+</body>
+</html>
+
