@@ -1,5 +1,6 @@
 h1{
     margin-left: 3rem;
+    font-weight: bolder;
 }
 li{
     list-style: none;
@@ -9,8 +10,11 @@ li{
     display: flex;
     justify-content: space-between;
 }
-ul{
+ul {
     display: flex;
+    margin-right: 1.5rem;
+    padding: 13px;
+    font-size: 1.3rem;
 }
 .welcomeimg>img{
     height: 90vh;
@@ -23,7 +27,10 @@ ul{
 }
 .skills>div{
     text-align: center;
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
+    padding: 1vw;
+    margin: 2vw;
+    
 }
 .footer{
     background-color: black;
@@ -33,4 +40,12 @@ ul{
 }
 .footer>p{
     font-size: 25px;
+}
+
+a:link, a:visited{
+    color: black;
+}
+
+a:hover{
+    color: coral;
 }
