@@ -39,6 +39,7 @@ console.log(f);
 
 // String
 // ' ', " ", ``
+// single quotes, double quotes, backticks
 var str;
 str = "How are you Doing? \nYUP i am fine. How about you?"
 console.log(str);
