@@ -50,3 +50,12 @@ console.log(str1);
 //backticks
 var num = 100;
 console.log(`half of ${num} is ${num/2}`);
+
+let l = 100;
+console.log(l);
+
+//let l = 200; //SyntaxError: Identifier 'l' has already been declared
+//console.log(l);
+
+l = 200;
+console.log(l);
