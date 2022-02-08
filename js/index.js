@@ -47,5 +47,6 @@ str1 = `STR1 How are you Doing?
 YUP i am fine. How about you?`
 console.log(str1);
 
+//backticks
 var num = 100;
 console.log(`half of ${num} is ${num/2}`);
