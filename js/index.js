@@ -68,3 +68,8 @@ for(var i =1; i<=num; i++){
         console.log("number is even "+i);
     }
 }
+
+// const -> NO redeclare NO reinitialize
+const num1 = 2;
+console.log(num1);
+//num1 = 4; //TypeError: Assignment to constant variable
