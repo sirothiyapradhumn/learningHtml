@@ -59,4 +59,5 @@ console.log(array2d);
 console.table(array2d); // print 2d array in form of table
 
 console.log(array2d[1][2]);
- 
+console.log(array2d[1].length);
+console.log(array2d.length);
