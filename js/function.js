@@ -1,3 +1,4 @@
+// Function normal type
 //function defination
 /*
 function add(a, b){
@@ -22,7 +23,7 @@ console.log("Return function is \n"+ returnfunc);
 returnfunc();
 
 
-//2nd type Function Expresiion
+//2nd type Function Expression
 
 let sayHi = function (){
     console.log("Hi i am function");
