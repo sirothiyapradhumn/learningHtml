@@ -9,6 +9,7 @@ let person = {
     Gender : "Male",
     sayHi : function () { // put function in object as key : value 
         console.log(`Hello, I work for ${this.Company} and My skills are ${person.Skill} Thank You.`);
+        //  this.Company -> Means this object means current object
     },
     Address : { // nested object    -> object kai ander object 
         State : "Madhya Pradesh",
@@ -40,3 +41,7 @@ for(let abc in person){
     // print key value in single line 
     //console.log(`${abc} : ${person[abc]}`);
 }
+
+console.log(person.Skill[2]); // by using dot notaion 
+console.log(person["Skill"][1]); // by using braket notaion
+console.log(person.Address.City);// object kai ander object ki property ki value
