@@ -10,13 +10,14 @@ let person = {
     sayHi : function () { // put function in object as key : value 
         console.log(`Hello, I work for ${person.Company} and My skills are ${person.Skill} Thank You.`);
     },
-    isDevloper : true, // put boolean int obj as  key : value  
     Address : { // nested object    -> object kai ander object 
         State : "Madhya Pradesh",
         City : "Gwalior",
         Country : "India",
         Pincode : 474001
-    }
+    },
+    isDevloper : true // put boolean int obj as  key : value  
+    
 }
 
 console.log(`Hey ${person.Company} Thank You for Signing Up.`);
