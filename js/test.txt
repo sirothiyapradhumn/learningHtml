@@ -58,8 +58,8 @@ console.log(count)
 
 A: 1
 B: 2
->>C: 3
-D: 4
+C: 3
+>>D: 4
 
 // < --------------Question 5----------------->
 
@@ -273,9 +273,9 @@ const colorConfig = {
 const colors = ['pink', 'red', 'blue'];
 
 console.log(colorConfig.colors[1]);
->>A: true
+A: true
 B: false
-C: undefined
+>>C: undefined  // cannot read properties of undefine
 D: TypeError
 
 // < --------------Question 19----------------->
