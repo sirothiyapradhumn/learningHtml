@@ -14,7 +14,7 @@ for(let i = 0; i<inputArr.length; i++){
     let firstChar = inputArr[i].charAt(0);
     //console.log(firstChar);
     if(firstChar == '-'){
-        optionsArr.puch(inputArr[i]);
+        optionsArr.push(inputArr[i]);
     }
     else{
         filesArr.push(inputArr[i]);
@@ -38,9 +38,31 @@ for(let i = 0; i<filesArr.length; i++){
 let content = "";
 for(let i = 0; i<filesArr.length; i++){
     let fileContent = fs.readFileSync(filesArr[i]);
-    content = content + fileContent + "\n";
+    content = content + fileContent + "\r\n";
 }
 console.log(content);
 
-let contentArr = content.split("\n");
-console.log(contentArr);
+let contentArr = content.split("\r\n");
+console.table(contentArr);
+
+//check if -s is present or not
+let isSPresent = optionsArr.includes("-s");
+if (isSPresent) {
+    for (let i = 1; i < contentArr.length; i++){
+        if (contentArr[i] == "" && contentArr[i - 1] == "") {
+            contentArr[i] = null;
+        }
+        else if (contentArr[i] == "" && contentArr[i - 1] == null) {
+            contentArr[i] = null;
+        }
+    }
+    console.table(contentArr);
+    let tempArr = [];
+    //push everything in tempArr except null
+    for (let i = 0; i < contentArr.length; i++){
+        if (contentArr[i] != null) {
+            tempArr.push(contentArr[i]);
+        }
+    }
+    console.log("data after removing extra lines\n",tempArr);
+}
