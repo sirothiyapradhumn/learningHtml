@@ -1,5 +1,6 @@
 // 1) node wcat.js filePath -> displays the  contents of a file in terminal
 // 2) node wcat.js filePath filePath-> displays multiple file contents in the terminal and concatenate all file content
+// 3) node wcat.js -n filePath filePath filePath  or node wcat.js -n filePath.
 
 const fs = require("fs");
             // process.argv ->   es sai ham console mai input lai sakte hai 
@@ -7,9 +8,18 @@ let inputArr = process.argv.slice(2);
 //console.log(inputArr);
 
 let filesArr = [];
+let optionsArr = [];
 //placed files path in filesArr
 for(let i = 0; i<inputArr.length; i++){
-    filesArr.push(inputArr[i]);
+    let firstChar = inputArr[i].charAt(0);
+    //console.log(firstChar);
+    if(firstChar == '-'){
+        optionsArr.puch(inputArr[i]);
+    }
+    else{
+        filesArr.push(inputArr[i]);
+    }
+    
 }
 
 //console.log(filesArr);
@@ -19,8 +29,8 @@ for(let i = 0; i<inputArr.length; i++){
 for(let i = 0; i<filesArr.length; i++){
     let doesExist = fs.existsSync(filesArr[i]);
     if(!doesExist) {
-        console.log("Files does not exist");
-        break;
+        console.log("One or more File(s) do not exist");
+        return;
     }
 }
 
@@ -28,6 +38,9 @@ for(let i = 0; i<filesArr.length; i++){
 let content = "";
 for(let i = 0; i<filesArr.length; i++){
     let fileContent = fs.readFileSync(filesArr[i]);
-    content += fileContent+"\n";
+    content = content + fileContent + "\n";
 }
 console.log(content);
+
+let contentArr = content.split("\n");
+console.log(contentArr);
