@@ -42,11 +42,11 @@ for(let i = 0; i<filesArr.length; i++){
     let fileContent = fs.readFileSync(filesArr[i]);
     content = content + fileContent + "\r\n";
 }
-console.log(content);
+//console.log(content);
 
 //    \n -> new line
 let contentArr = content.split("\r\n");
-console.table(contentArr);
+//console.table(contentArr);
 
 //check if -s is present or not
 let tempArr = [];
@@ -60,7 +60,7 @@ if (isSPresent) {
             contentArr[i] = null;
         }
     }
-    console.table(contentArr);
+    //console.table(contentArr);
     
     //push everything in tempArr except null
     for (let i = 0; i < contentArr.length; i++){
@@ -68,7 +68,7 @@ if (isSPresent) {
             tempArr.push(contentArr[i]);
         }
     }
-    console.log("data after removing extra lines\n",tempArr);
+    //console.log("data after removing extra lines\n",tempArr);
 }
 
 let indexOfN = optionsArr.indexOf("-n");
