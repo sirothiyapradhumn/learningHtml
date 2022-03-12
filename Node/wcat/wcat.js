@@ -42,6 +42,7 @@ for(let i = 0; i<filesArr.length; i++){
 }
 console.log(content);
 
+//    \n -> new line
 let contentArr = content.split("\r\n");
 console.table(contentArr);
 
