@@ -21,16 +21,27 @@
     // let b = 100;
     // console.log(b);
     
-    for (let i = 1; i <= 10; i++){
+
+    // by using let, print 1 to 10 interval of 2 se
+    // for (let i = 1; i <= 10; i++){
+    //     // hint: closures and scope -> wrapping
+    //     setTimeout(function () {
+    //         console.log(i);
+    //     }, 2000*i);
+    // }
+    
+    
+    
+    for (var i = 1; i <= 10; i++){
         // hint: closures and scope -> wrapping
-        setTimeout(function () {
-            console.log(i);
-        }, 2000*i);
+        function outer(a){
+            setTimeout(function(){
+                console.log(a);
+            }, 2000*a);
+        }
+
+        outer(i);
     }
-    
-    
-    
-    
     
     
     
