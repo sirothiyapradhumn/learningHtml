@@ -2,70 +2,70 @@
 
 const fs = require("fs");
 
-//Callback hell
-fs.readFile("f1.txt", function cb1(err, res){
+// //Callback hell
+// fs.readFile("f1.txt", function cb1(err, res){
+//     if(err){
+//         console.log(err);
+//     }
+//     else {
+//         console.log(res + "");
+//         fs.readFile("f2.txt", function cb2(err, res){
+//             if(err){
+//                 console.log(err);
+//             }
+//             else {
+//                 console.log(res + "");
+//                 fs.readFile("f3.txt", function cb3(err, res){
+//                     if(err){
+//                         console.log(err);
+//                     }
+//                     else {
+//                         console.log(res + "");
+//                         console.log("Read all files");
+//                     }
+//                 })
+//             }
+//         });
+//     }
+// });
+
+
+
+
+
+//1st way to overcome callback hell   -> is to seperate the callback function
+
+fs.readFile("f1.txt", cb1);
+
+function cb1(err, res){
     if(err){
         console.log(err);
     }
     else {
         console.log(res + "");
-        fs.readFile("f2.txt", function cb2(err, res){
-            if(err){
-                console.log(err);
-            }
-            else {
-                console.log(res + "");
-                fs.readFile("f3.txt", function cb3(err, res){
-                    if(err){
-                        console.log(err);
-                    }
-                    else {
-                        console.log(res + "");
-                        console.log("Read all files");
-                    }
-                })
-            }
-        });
+        fs.readFile("f2.txt", cb2);
     }
-});
+}
 
+function cb2(err, res){
+    if(err){
+        console.log(err);
+    }
+    else {
+        console.log(res + "");
+        fs.readFile("f3.txt", cb3);
+    }
+}
 
-
-
-
-// //1st way to overcome callback hell   -> is to seperate the callback function
-
-// fs.readFile("f1.txt", cb1);
-
-// function cb1(err, res){
-//     if(err){
-//         console.log(err);
-//     }
-//     else {
-//         console.log(res + "");
-//         fs.readFile("f2.txt", cb2);
-//     }
-// }
-
-// function cb2(err, res){
-//     if(err){
-//         console.log(err);
-//     }
-//     else {
-//         console.log(res + "");
-//         fs.readFile("f3.txt", cb3);
-//     }
-// }
-
-// function cb3(err, res){
-//     if(err){
-//         console.log(err);
-//     }
-//     else {
-//         console.log(res + "");
-//         console.log("data printed ");
-//     }
-// }
+function cb3(err, res){
+    if(err){
+        console.log(err);
+    }
+    else {
+        console.log(res + "");
+        console.log("data printed ");
+    }
+}
 
 
 
