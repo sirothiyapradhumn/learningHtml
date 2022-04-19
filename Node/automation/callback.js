@@ -33,53 +33,53 @@ const fs = require("fs");
 
 
 
-//1st way to overcome callback hell   -> is to seperate the callback function
+// //1st way to overcome callback hell   -> is to seperate the callback function
 
-fs.readFile("f1.txt", cb1);
+// fs.readFile("f1.txt", cb1);
 
-function cb1(err, res){
-    if(err){
-        console.log(err);
-    }
-    else {
-        console.log(res + "");
-        fs.readFile("f2.txt", cb2);
-    }
-}
-
-function cb2(err, res){
-    if(err){
-        console.log(err);
-    }
-    else {
-        console.log(res + "");
-        fs.readFile("f3.txt", cb3);
-    }
-}
-
-function cb3(err, res){
-    if(err){
-        console.log(err);
-    }
-    else {
-        console.log(res + "");
-        console.log("data printed ");
-    }
-}
-
-
-
-// //Q2 read files f1.txt, f2.txt & f3.txt parallely using callbacks
-
-// fs.readFile("f1.txt", cb);
-// fs.readFile("f2.txt", cb);
-// fs.readFile("f1.txt", cb);
-
-// function cb(err, res){
+// function cb1(err, res){
 //     if(err){
 //         console.log(err);
 //     }
 //     else {
 //         console.log(res + "");
+//         fs.readFile("f2.txt", cb2);
 //     }
 // }
+
+// function cb2(err, res){
+//     if(err){
+//         console.log(err);
+//     }
+//     else {
+//         console.log(res + "");
+//         fs.readFile("f3.txt", cb3);
+//     }
+// }
+
+// function cb3(err, res){
+//     if(err){
+//         console.log(err);
+//     }
+//     else {
+//         console.log(res + "");
+//         console.log("data printed ");
+//     }
+// }
+
+
+
+//Q2 read files f1.txt, f2.txt & f3.txt parallely using callbacks
+
+fs.readFile("f1.txt", cb);
+fs.readFile("f2.txt", cb);
+fs.readFile("f3.txt", cb);
+
+function cb(err, res){
+    if(err){
+        console.log(err);
+    }
+    else {
+        console.log(res + "");
+    }
+}
