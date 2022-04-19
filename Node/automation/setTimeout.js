@@ -44,4 +44,11 @@
     }
     
     
-    
+    //  https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing
+
+    //question
+    console.log("before");
+    setTimeout(function(){
+        console.log("time out");
+    }, 5000);
+    console.log("after");
