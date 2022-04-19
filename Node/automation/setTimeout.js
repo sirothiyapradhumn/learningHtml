@@ -32,23 +32,32 @@
     
     
     
-    for (var i = 1; i <= 10; i++){
-        // hint: closures and scope -> wrapping
-        function outer(a){
-            setTimeout(function(){
-                console.log(a);
-            }, 2000*a);
-        }
+    // for (var i = 1; i <= 10; i++){
+    //     // hint: closures and scope -> wrapping
+    //     function outer(a){
+    //         setTimeout(function(){
+    //             console.log(a);
+    //         }, 2000*a);
+    //     }
 
-        outer(i);
-    }
+    //     outer(i);
+    // }
     
     
     //  https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing
 
     //question
+    // console.log("before");
+    // setTimeout(function(){
+    //     console.log("time out");
+    // }, 5000);
+    // console.log("after");
+
     console.log("before");
     setTimeout(function(){
         console.log("time out");
-    }, 5000);
+    },5000);
+    fetch("https://jsonplaceholder.typicode.com/todos/1")
+    .then(function(response){ return response.json(); })
+    .then(function(json){ console.log(json); });
     console.log("after");
