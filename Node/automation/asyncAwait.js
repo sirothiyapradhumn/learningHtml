@@ -1,33 +1,37 @@
+//promises 
 
-function fp(){
-    return Promise(function (resolve, reject){
-        resolve("hi");
-    });
-}
-
-let promisifyFunc = fp();
-
-promisifyFunc.then(function(data){
-    console.log(data);
-});
-
-promisifyFunc.catch(function(err){
-    console.log(err);
-});
+// function fp() { 
+//     return new Promise(function (resolve, reject) {
+//       resolve("hi");
+//     });
+//   }
+  
+//   let promisifyFunc = fp();
+  
+//   promisifyFunc.then(function (data) {
+//     console.log(data);
+//   });
+  
+//   promisifyFunc.catch(function (err) {
+//     console.log(err);
+//   });
 
 
 //using async keyword
-async function f(){
-    return "hello";
-}
 
-let asyncf = f();
+// async function f() {
+//     return "hello";
+//   }
+  
+//   let asyncf = f();
+  
+//   asyncf.then(function (data) {
+//     console.log(data);
+//   });
+  
+//   // below line work on browser only bcoz alert is a part or webapi
+//   asyncf.then(alert);
 
-asyncf.then(function (data){
-    console.log(data);
-});
-
-asyncf.then(alert);
 
 
 //The keyword await makes JavaScript wait until that promise settles and returns its result.
@@ -45,5 +49,6 @@ async function f() {
     console.log("hello");
     alert(result); // "done!"
   }
-  f();
-  console.log("YOLO");
+
+f();
+console.log("YOLO");
