@@ -35,13 +35,41 @@ console.log(obj);
 //-------------------------------------------------------------  
 
 
+// let user = {
+//     name: "John",
+//     age: 30
+//   };
+
+// let clone = {};
+
+// Object.assign(clone, user, {lastName :"sharma"}, {hobby : "football"}); // clonning and merging
+
+// console.log(clone);
+
+
+//deep clone 
+
 let user = {
-    name: "John",
-    age: 30
-  };
-
+  name: "John",
+  sizes: {
+    height: 182,
+    width: 50,
+  },
+};
 let clone = {};
-
-Object.assign(clone, user, {lastName :"sharma"}, {hobby : "football"}); // clonning and merging
-
+//this is not deep cloning , because refference to size identifier is same in both clone and user obj 
+Object.assign(clone, user);
 console.log(clone);
+clone.name = "ABHISHEK";
+console.log(clone);
+clone.sizes.height = 123;
+console.log(clone);
+console.log(user);
+
+//flatten an Object 
+
+let flattenedObj={ 
+  "name": "Jhon",
+  "sizes.height" : 182,
+  "sizes.width":50
+}
