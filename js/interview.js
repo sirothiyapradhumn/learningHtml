@@ -1,12 +1,12 @@
 //q1
 //count array ele in obj by single loop
-let arr = [1, 4, 2, 3, 2, 4, 1, 5, 6, 1, 1];
-let  obj = {};
-for(let i = 0; i<arr.length; i++){
-    obj[arr[i]] = obj[arr[i]] == undefined ? 1 : obj[arr[i]] + 1;
-}
+// let arr = [1, 4, 2, 3, 2, 4, 1, 5, 6, 1, 1];
+// let  obj = {};
+// for(let i = 0; i<arr.length; i++){
+//     obj[arr[i]] = obj[arr[i]] == undefined ? 1 : obj[arr[i]] + 1;
+// }
 
-console.log(obj);
+// console.log(obj);
 
 //o/p { '1': 4, '2': 2, '3': 1, '4': 2, '5': 1, '6': 1 }
 
@@ -49,27 +49,84 @@ console.log(obj);
 
 //deep clone 
 
-let user = {
-  name: "John",
-  sizes: {
-    height: 182,
-    width: 50,
-  },
-};
-let clone = {};
-//this is not deep cloning , because refference to size identifier is same in both clone and user obj 
-Object.assign(clone, user);
-console.log(clone);
-clone.name = "ABHISHEK";
-console.log(clone);
-clone.sizes.height = 123;
-console.log(clone);
-console.log(user);
+// let user = {
+//   name: "John",
+//   sizes: {
+//     height: 182,
+//     width: 50,
+//   },
+// };
+// let clone = {};
+// //this is not deep cloning , because refference to size identifier is same in both clone and user obj 
+// Object.assign(clone, user);
+// console.log(clone);
+// clone.name = "ABHISHEK";
+// console.log(clone);
+// clone.sizes.height = 123;
+// console.log(clone);
+// console.log(user);
 
-//flatten an Object 
+// //flatten an Object 
 
-let flattenedObj={ 
-  "name": "Jhon",
-  "sizes.height" : 182,
-  "sizes.width":50
+// let flattenedObj={ 
+//   "name": "Jhon",
+//   "sizes.height" : 182,
+//   "sizes.width":50
+// }
+
+// -> "this" INTERVIEW QUESTION TYPES
+
+/*rule to be follow
+  ->  The value of this is evaluated during the run-time, depending on the context.
+  ->  this -> window (browser)  -> ' '
+      this -> globle (node engine) -> undefined
+      
+      this == undefined
+  */
+//1st question
+
+
+
+function type1 () {
+  console.log(this.name);
 }
+
+let name = "JS" ;
+
+type1();
+
+//o/p -> JS
+
+//Question 2
+
+function type2 () {
+  console.log(this.lname);
+}
+
+var lname = "Kumar";
+
+var obj = {
+  lname : "Sharma",
+  type2
+}
+
+obj.type2(); 
+
+//o/p -> sharma
+
+//question 3
+
+var food = "Pizza";
+
+var obj = {
+  food : "Pasta",
+  eat (){
+    console.log("I am Eating " + this.food);
+  }
+}
+
+var foo = obj.eat;
+
+foo();
+
+//o/p -> I am eating Pizza
