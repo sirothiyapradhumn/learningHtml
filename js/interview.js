@@ -91,7 +91,7 @@ function type1 () {
   console.log(this.name);
 }
 
-let name = "JS" ;
+var name = "JS" ;
 
 type1();
 
