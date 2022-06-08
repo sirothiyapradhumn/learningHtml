@@ -130,3 +130,23 @@ var foo = obj.eat;
 foo();
 
 //o/p -> I am eating Pizza
+
+//question 4
+
+var length = 1;
+function square (){
+  let cb = function(){
+    console.log(this.length * this.length);
+  }
+
+  setTimeout(cb, 2000);
+}
+
+var obj = {
+  length : 3,
+  square
+};
+
+obj.square();
+
+// o/p -> 1.
