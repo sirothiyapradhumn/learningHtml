@@ -114,3 +114,12 @@ let evenNo = arr.filter((num) => {
 });
 
 console.log(evenNo);
+
+//reduce 
+//write code to get sum of arr
+
+let sumOfArray = arr.reduce((acc, num) => {
+    return acc+num;
+});
+
+console.log(sumOfArray);
