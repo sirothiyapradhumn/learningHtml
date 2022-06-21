@@ -94,3 +94,12 @@ let calculate = function(arr, logic){
 console.log(calculate(arr, area));
 console.log(calculate(arr, peremeter));
 console.log(calculate(arr, diagonal));
+
+//map 
+//calculate area of square
+
+let res = arr.map((a) =>{
+    return a*a;
+});
+
+console.log(res);
