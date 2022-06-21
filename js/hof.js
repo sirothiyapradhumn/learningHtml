@@ -103,3 +103,14 @@ let res = arr.map((a) =>{
 });
 
 console.log(res);
+
+//filter
+//write a code to return an array of  even no.
+
+let evenNo = arr.filter((num) => {
+    // for even no. -> !(num % 2)
+    // for odd no.  ->  num % 2
+    return num % 2 == 0;
+});
+
+console.log(evenNo);
