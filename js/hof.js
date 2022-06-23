@@ -140,3 +140,89 @@ function largestElement(max, curr){
 
 var ans = arr.reduce(largestElement, -Infinity);
 console.log(ans);
+
+
+// ===============================================================
+
+var users = [
+    {firstName : "Sahil", lastName : "Siothiya", age: 55},
+    {firstName : "Mayank", lastName : "Sharma", age: 25},
+    {firstName : "Shivam", lastName : "Sahu", age: 15},
+    {firstName : "Rahul", lastName : "Singh", age: 15},
+];
+
+//WAC to get fullName of all users
+//o/p -> ['Sahil Siothiya', 'Mayank Sharma', 'Shivam Sahu', 'Rahul Singh']
+
+function getFullName(obj){
+    return obj.firstName + " "+ obj.lastName;
+}
+
+var ans = users.map(getFullName);
+console.log(ans);
+
+    //-> more simpler way
+    console.log(users.map((obj) => obj.firstName +" "+ obj.lastName));
+
+
+//WAC to return the number of people with a particular age
+//o/p -> {15: 2, 25: 1, 55: 1}
+// "bee in the knees"
+
+function peopleAge(robj, cobj){
+    let age = cobj.age;
+
+    if(robj[age]){
+        robj[age] = robj[age] + 1;
+    }
+    else{
+        robj[age] = 1;
+    }
+
+    return robj;
+}
+
+var obj = users.reduce(peopleAge, {});
+console.log(obj);
+
+//occurance of letter in string or word
+// o/p {H: 1, E: 1, L: 2, O: 1}
+const word = "HELLO";
+const split_string = word.split("");
+console.log(split_string);
+
+function occureance(robj, cobj){
+    let ch = cobj;
+    if(robj[ch]){
+        robj[ch] = robj[ch] + 1;
+    }
+    else{
+        robj[ch] = 1;
+    }
+
+return robj;
+}
+
+var obj = split_string.reduce(occureance, {});
+console.log(obj);
+
+// write a code to get firstname of all the users with age less than 30;
+//o/p ['Mayank Sharma', 'Shivam Sahu', 'Rahul Singh']
+
+var ans = users.filter((obj) => obj.age< 30);
+console.log(ans);
+var ans = ans.map(getFullName);
+console.log(ans);
+
+
+  // by using reduce
+  var ans = users.reduce((arr, obj) => {
+    if(obj.age < 30){
+        arr.push(obj.firstName +" "+ obj.lastName);
+    }
+    return arr;
+  }, []);
+
+  console.log(ans);
+
+
