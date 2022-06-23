@@ -92,6 +92,8 @@ let calculate = function(arr, logic){
 };
 
 console.log(calculate(arr, area));
+//above line same as 96th line o/p
+console.log(arr.map(area));
 console.log(calculate(arr, peremeter));
 console.log(calculate(arr, diagonal));
 
@@ -226,3 +228,28 @@ console.log(ans);
   console.log(ans);
 
 
+  //IMPLEMANTAION OF OUR OWN MAP
+
+  //console.log(arr.calculate(area));  // givr error to make like this we use our own map 
+  console.log(arr.map(area));
+
+
+  Array.prototype.calculate = function(logic){
+    let res =[];
+    for(let i =0; i<this.length; i++){
+        res.push(logic(this[i]));
+    }
+
+    return res;
+  }
+
+  var narr = [1,2,3,4];
+  var ans = narr.calculate(area);
+  console.log(ans);
+  // o/p [1, 4, 9, 16]
+
+  var ans = narr.calculate(function(num){
+    return num*3;
+  })
+  console.log(ans);
+// o/p [3, 6, 9, 12]
