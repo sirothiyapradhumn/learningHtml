@@ -21,7 +21,7 @@ function calculator(operator, a, b){
 
 let fn = calculator("+", 4, 5);
 console.log(fn);
-let ans = fn();
+var ans = fn();
 console.log(ans);
 
 
@@ -123,3 +123,20 @@ let sumOfArray = arr.reduce((acc, num) => {
 });
 
 console.log(sumOfArray);
+
+//Write a code to calculate largest element in arr
+//const arr = [2,5,8,6,78];
+//o/p -> 78
+
+function largestElement(max, curr){
+    if(curr>max){
+        console.log("max " +max);
+        console.log("curr "+ curr);
+        max = curr;
+    }
+
+    return max;
+}
+
+var ans = arr.reduce(largestElement, -Infinity);
+console.log(ans);
