@@ -150,3 +150,29 @@ var obj = {
 obj.square();
 
 // o/p -> 1.
+
+// largest element and 2nd largest element
+
+const arr = [2, 4, 5, 9, 10];
+
+function largest() {
+  let max = -Infinity;
+  let secMax = -Infinity;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (max < arr[i]) {
+      max = arr[i];
+    }
+  }
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] != max) {
+      secMax = Math.max(secMax, arr[i]);
+    }
+  }
+
+  return secMax;
+}
+
+let ans = largest(arr);
+console.log(ans);
