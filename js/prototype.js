@@ -23,3 +23,27 @@ console.log(abc.__proto__.__proto__);
 
 console.log(obj.__proto__.__proto__);
 // null -- Bhagwan sai bada koi nhi hai like this
+
+
+let user = {
+    name:"Sahil",
+    sayHi: function(){
+        console.log(this.name);
+    }
+}
+
+let admin = {
+    role: "admin",
+    age: 30,
+}
+
+// admin.name  // we cant acess this property 
+
+admin.__proto__ = user;
+
+//now we can acess 
+admin.name  // sahil
+admin.sayHi()  //sahil
+
+admin.name = "Pradhumn";
+admin.sayHi();  // pradhumn;
