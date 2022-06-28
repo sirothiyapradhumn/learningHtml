@@ -20,6 +20,7 @@ myPenguin.printPlaceOfOrigin();
 
 //inheritence
 
+/*
 class LivingOrganism{
     constructor(){
         this.breath = true;
@@ -64,6 +65,36 @@ console.log(myPenguin);
 
 myPenguin.isBreath();
 //true
+
+myPenguin.printEating();
+//Fish
+
+myPenguin.printPlaceOfOrigin();
+//Antartica
+
+
+*/
+
+
+//new way to write class
+class Bird {
+
+    eat = true;
+
+    printEating = ()=> console.log(this.eat);
+}
+
+class Penguin extends Bird{
+   
+    habitat = "Antartica";
+
+    printPlaceOfOrigin = ()=>{
+        console.log(this.habitat);
+    }
+}
+
+const myPenguin = new Penguin();
+console.log(myPenguin);
 
 myPenguin.printEating();
 //Fish
