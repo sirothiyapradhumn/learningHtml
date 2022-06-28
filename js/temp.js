@@ -8,4 +8,6 @@ var obj = {
     }
 }
 
-module.exports = obj;
+//module.exports = obj;
+
+export default obj;

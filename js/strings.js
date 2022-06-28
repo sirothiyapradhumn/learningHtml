@@ -42,3 +42,11 @@ var string = "                hello             world       welcome       JS  "
 
 console.log(string);
 console.log(string.trim());
+
+
+export const key = "SHA-23402340";
+
+export var exportedObj = {
+    name: "sahil",
+    age: 24,
+}
