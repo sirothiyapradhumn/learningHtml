@@ -38,7 +38,7 @@ welcome.call(user2, "abc@gmail.com", 1234567890, "INDIA");
 welcome.apply(user, ["Kapil@gmail.com", 123457890, "INDIA"]);
 
 //bind method
-let bindedFN = welcome.bind(user, "abc@gmail.com", 1234567890, "INDIA");
+var bindedFN = welcome.bind(user, "abc@gmail.com", 1234567890, "INDIA");
 //console.log(bindedFN);
 bindedFN();
 
@@ -56,4 +56,22 @@ function Name(firstName, lastName){
 
 var newObj = new Name("Sunil", "Gavaskar");
 
-//js create a new obj int background , and psses its refference to the function
+//js create a new obj int background , and passes its refference to the function
+
+
+//question
+
+function fun(){
+    console.log(this.name || "Name is not defined");
+}
+
+var obj = {
+    name : "Yashpal Sharma"
+}
+
+var bindedFN  = fun.bind(obj);
+bindedFN();
+//Yashpal Sharma
+var againgBindedFN1 = new bindedFN();
+againgBindedFN1();
+//Name is not defined
