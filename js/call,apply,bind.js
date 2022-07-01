@@ -73,5 +73,31 @@ var bindedFN  = fun.bind(obj);
 bindedFN();
 //Yashpal Sharma
 var againgBindedFN1 = new bindedFN();
-againgBindedFN1();
+//againgBindedFN1();
 //Name is not defined
+
+
+//writting polyfill for bind
+
+let car = {
+    name: "THar",
+    brand: "Mahindra"
+}
+
+let welcomeCar = function() {
+    console.log(`I bought a new ${this.brand} ${this.name}`);
+}
+
+let welcomeMyCar = welcomeCar.bind(car);
+welcomeMyCar();
+
+Function.prototype.mybind = function(...args){
+    //this -> welcomeCar
+    let fnObj = this;
+    return function() {
+        fnObj.call(args[0]);  
+    };
+}
+
+let myWelcomeCar = welcomeCar.mybind(car);
+myWelcomeCar();
