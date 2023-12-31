@@ -116,22 +116,6 @@ function workToDo(work, callback){
   callback(work);
 }
 
-// workToDo('brush', (w)=>{
-//   setTimeout(()=>{
-//     console.log(w);
-//     workToDo('gym', (w)=>{
-//       console.log(w);
-//       workToDo('breakfast', (w)=>{
-//         console.log(w);
-//         workToDo('coding', (w)=> {
-//           console.log(w);
-//         }, 3000);
-//       }, 2000)
-//     }, 4000);
-//   }, 1000);
-// })
-
-
 workToDo('brush', (w)=>{
   setTimeout(()=>{
     console.log(w);
