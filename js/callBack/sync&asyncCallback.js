@@ -138,3 +138,40 @@ workToDo('brush', (w)=>{
 })
 
 
+
+// another ex of callback hell 
+function sum(a, b) {
+  // console.log(a+b);
+  return a + b;
+}
+
+let async = (a, b, cb) => {
+  setTimeout(() => {
+    return cb(sum(a, b));
+  }, 3000);
+};
+
+async(5, 5, function (res) {
+  async(5, res, function (res) {
+    async(5, res, function (res) {
+      async(10, res, function (res) {
+        console.log("final res", res);
+        return res;
+      });
+    });
+  });
+});
+
+
+// same as above -> using arrow fn
+
+async(5, 5, (res) => {
+  async(5, res, (res) => {
+    async(5, res, (res) => {
+      async(10, res, (res) => {
+        console.log(res);
+        return res;
+      });
+    });
+  });
+});
