@@ -40,3 +40,46 @@ Promise.race([p1, p2, p3])
 Promise.any([p1, p2, p3])
 .then((data) => console.log(data))
 .catch((err) => console.log(err))
+
+
+// promise consuming using async & await
+
+let promiseAll = async () => {
+  try {
+    let data = await Promise.all([p1, p2, p3])
+    console.log(data);
+  } catch (err) {
+    console.log(err)
+  }
+}
+promiseAll()
+
+let promiseAllSettled = async () => {
+  try {
+    let data = await Promise.allSettled([p1, p2, p3])
+    console.log(data);
+  } catch (err) {
+    console.log(err)
+  }
+}
+promiseAllSettled()
+
+let promiseRace = async () => {
+  try {
+    let data = await Promise.race([p1, p2, p3])
+    console.log(data);
+  } catch (err) {
+    console.log(err)
+  }
+}
+promiseRace()
+
+let promiseAny = async () => {
+  try {
+    let data = await Promise.any([p1, p2, p3])
+    console.log(data);
+  } catch (err) {
+    console.log(err)
+  }
+}
+promiseAny()
